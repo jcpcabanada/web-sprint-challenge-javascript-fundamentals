@@ -64,8 +64,9 @@ const zooAnimals = [
   function animalNames(){
     const displayNames = [];
     zooAnimals.forEach(function(item){
-      displayNames.push(`name: ${this.animal_name}, scientific: ${this.scientific_name}`)
+      displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
     });
+    return displayNames;
   }
   
 
@@ -75,8 +76,9 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(){
+    const lowerCaseNames = zooAnimals.map(item => item.animal_name.toLowerCase());
+    return lowerCaseNames;
   }
   
   
@@ -85,8 +87,9 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(){
+    const lowPopulationAnimals = zooAnimals.filter(item => item.population < 5);
+    return lowPopulationAnimals;
   }
   
 
@@ -96,8 +99,9 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(){
+    const pop = zooAnimals.reduce((preVal, elem) => preVal + elem.population, 0);
+    return pop; 
   }
   
   
@@ -109,8 +113,8 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(a, b, cb){
+    
   }
  
   
