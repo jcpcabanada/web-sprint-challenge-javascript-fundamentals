@@ -16,7 +16,9 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+/*
+  nestedFunction first checks the scope with-in the function, and if it does not have that variable, it then check on the next scope outside of it.
+*/
 
 
 
@@ -28,9 +30,12 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let num = 0;
+  for (let i = 0; i <= number; i++){
+    num += i;
+  }
+  return num;
   }
  
 
@@ -56,8 +61,11 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(){
+    const displayNames = [];
+    zooAnimals.forEach(function(item){
+      displayNames.push(`name: ${this.animal_name}, scientific: ${this.scientific_name}`)
+    });
   }
   
 
